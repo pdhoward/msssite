@@ -1,6 +1,6 @@
 import Page from 'components/page'
 import PluginInfo from 'components/plugin-info'
-import plugins from 'plugins'
+import {patterns} from '../../../data'
 import styles from 'styles/pages/store/index.module.css'
 import { getPluginPreviewImage } from 'lib/plugin'
 import Image from 'next/image'
@@ -8,7 +8,7 @@ import Image from 'next/image'
 export default function StoreIndexPage({ plugin, npmData }) {
   return (
     <Page
-      title={`Hyper™ Store - ${plugin.name}`}
+      title={`MSS Patterns - ${plugin.name}`}
       description={plugin.description}
       image={plugin.preview}
     >
@@ -50,7 +50,7 @@ export const getStaticProps = async ({ params }) => {
   ).json()
 
   const plugin = {
-    ...plugins.find((e) => e.name === params.name),
+    ...patterns.find((e) => e.name === params.name),
     preview: getPluginPreviewImage(params.name),
   }
 
@@ -64,6 +64,6 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = () => ({
-  paths: plugins.map(({ name }) => ({ params: { name } })),
+  paths: patterns.map(({ name }) => ({ params: { name } })),
   fallback: false,
 })

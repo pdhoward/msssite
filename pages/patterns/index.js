@@ -1,5 +1,4 @@
 import PluginThemeShowcase from 'components/plugin-theme-showcase'
-import allPlugins from 'plugins'
 import { getPluginPreviewImage } from 'lib/plugin'
 import {patterns} from '../../data'
 

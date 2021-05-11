@@ -1,5 +1,4 @@
 import PluginThemeShowcase from 'components/plugin-theme-showcase'
-import allPlugins from 'plugins'
 import {patterns} from '../../data'
 
 export default function PluginNewestPage({ plugins }) {

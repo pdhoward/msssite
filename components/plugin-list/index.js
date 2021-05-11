@@ -2,14 +2,22 @@ import Link from 'next/link'
 import Plugin from '../plugin'
 import styles from './plugin-list.module.css'
 
+/*
+model link
+<Link
+          key={plugin.name}
+          href="/store/[name]"
+          as={`/store/${plugin.name}`}
+        >
+*/
+
 export default ({ query, plugins, filteredBy }) =>
   filteredBy === 'featured' ? (
     <div className={styles.featuredWrapper}>
       {plugins.map((plugin) => (
         <Link
           key={plugin.name}
-          href="/store/[name]"
-          as={`/store/${plugin.name}`}
+          href="https://example.com"         
         >
           <a className={styles.featuredElemContent}>
             <Plugin {...plugin} query={query} featured={true} />
@@ -22,8 +30,7 @@ export default ({ query, plugins, filteredBy }) =>
       {plugins.map((plugin) => (
         <Link
           key={plugin.name}
-          href="/store/[name]"
-          as={`/store/${plugin.name}`}
+          href="https://example.com"        
         >
           <a className={styles.listElemContainer}>
             <div className={styles.listElemContent}>
