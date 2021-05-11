@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import plugins from 'plugins.json'
+//import plugins from 'plugins.json'
+import {patterns} from '../../../data'
 import Page from 'components/page'
 import PluginInfo from 'components/plugin-info'
 import { File, Directory } from 'components/icons'
@@ -84,7 +85,7 @@ export default function StoreSourcePage({
 
   return (
     <Page
-      title={`Hyper™ Store - Source of ${plugin.name}`}
+      title={`MSS Patterns - Source of ${plugin.name}`}
       description={plugin.description}
       image={plugin.preview}
     >
@@ -104,7 +105,7 @@ export default function StoreSourcePage({
 }
 
 export async function getStaticProps({ params }) {
-  const plugin = plugins.find((e) => e.name === params.name)
+  const plugin = patterns.find((e) => e.name === params.name)
 
   if (!plugin) {
     return {
