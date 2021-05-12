@@ -1,3 +1,4 @@
+import PagesManifestPlugin from 'next/dist/build/webpack/plugins/pages-manifest-plugin'
 import Link from 'next/link'
 import Plugin from '../plugin'
 import styles from './plugin-list.module.css'
@@ -28,9 +29,10 @@ export default ({ query, plugins, filteredBy }) =>
   ) : (
     <div className={styles.listWrapper}>
       {plugins.map((plugin) => (
+
         <Link
           key={plugin.name}
-          href="https://example.com"        
+          href="https://example.com"         
         >
           <a className={styles.listElemContainer}>
             <div className={styles.listElemContent}>
@@ -38,6 +40,7 @@ export default ({ query, plugins, filteredBy }) =>
             </div>
           </a>
         </Link>
+      
       ))}
     </div>
   )

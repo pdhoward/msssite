@@ -1,6 +1,5 @@
 import Page from 'components/page'
 import DownloadButton from 'components/download-button'
-import { LogoBig } from 'components/icons'
 import heroStyles from 'styles/pages/home/hero.module.css'
 
 import Terminal from 'components/terminal'

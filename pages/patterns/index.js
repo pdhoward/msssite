@@ -14,11 +14,11 @@ export function getStaticProps() {
       ...p,
       preview: getPluginPreviewImage(p.preview.src),
       }
+      console.log(obj)
       return obj
-    })
-
-   
-
+    })   
+  
+  console.log(plugins)
   return {
     props: {
       plugins,
